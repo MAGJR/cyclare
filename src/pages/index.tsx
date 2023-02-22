@@ -1,13 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
-import { Flex, Box, Heading, Text, Button } from '@chakra-ui/react';
+import { Flex, Heading } from '@chakra-ui/react';
 import ReactPlayer, { ReactPlayerProps } from 'react-player';
 import { Lead } from '@/components/Lead';
 import Head from 'next/head';
 
 import { Root } from '@/components/Root';
 import { MotionBox, animationContainer } from '@/styles/animation';
-
-
 
 interface VideoProps {
   played: number;
@@ -20,12 +18,10 @@ export default function Home({ played }: VideoProps) {
 
   useEffect(() => {
     setIsClient(true);
-
-    
   }, []);
 
   useEffect(() => {
-    if (isClient && playerRef && playerRef.current) {
+    if (isClient && playerRef.current) {
       playerRef.current.seekTo(played);
     }
   }, [played, isClient]);
@@ -54,15 +50,13 @@ export default function Home({ played }: VideoProps) {
             width="100%"
             height="100%"
             controls
-            onProgress={(state: ReactPlayerProps) => {
-              const { playedSeconds } = state;
+            onProgress={({ playedSeconds }: ReactPlayerProps) => {
               const threshold = 10;
 
               if (playedSeconds > threshold) {
                 setShowContent(true);
 
                 // Recupera o valor armazenado no cookie
-                
               }
             }}
             ref={playerRef}
