@@ -86,9 +86,7 @@ export function Lead() {
         fontSize={['sm', 'md']}
         px={['4', '6']}
         py={['2', '4']}
-        variants={animationContainer}
-        whileHover={{ scale: 1.09 }}
-        whileTap={{ scale: 0.9 }}
+        
       >
         Compre agora
       </Button>

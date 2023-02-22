@@ -1,15 +1,11 @@
 import { MotionBox, itemAnimation, animationContainer } from "@/styles/animation";
 import { Box, Flex, Text, Link, IconButton } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 import { Phone, PersonSimple } from "phosphor-react";
-
-
 
 export function Header() {
   return (
     <MotionBox
     variants={itemAnimation}
-
     >
     <Flex justify="space-between" align="center" py={4} px={6} bg="gray.50" borderBottom="1px solid gray" mb="30" m="10">
       <Box w="100%"  gap="2">
