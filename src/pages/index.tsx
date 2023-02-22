@@ -7,11 +7,9 @@ import Head from 'next/head';
 import { Root } from '@/components/Root';
 import { MotionBox, animationContainer } from '@/styles/animation';
 
-interface VideoProps {
-  played: number;
-}
 
-export default function Home({ played }: VideoProps) {
+
+export default function Home() {
   const [showContent, setShowContent] = useState(false);
   const playerRef = useRef<ReactPlayer>(null);
   const [isClient, setIsClient] = useState(false);
@@ -22,9 +20,9 @@ export default function Home({ played }: VideoProps) {
 
   useEffect(() => {
     if (isClient && playerRef.current) {
-      playerRef.current.seekTo(played);
+      playerRef.current.seekTo(0);
     }
-  }, [played, isClient]);
+  }, [isClient]);
 
   return (
     <Flex direction="column" align="center" justify="center">
@@ -56,7 +54,7 @@ export default function Home({ played }: VideoProps) {
               if (playedSeconds > threshold) {
                 setShowContent(true);
 
-                // Recupera o valor armazenado no cookie
+                
               }
             }}
             ref={playerRef}
@@ -68,4 +66,17 @@ export default function Home({ played }: VideoProps) {
       <Root />
     </Flex>
   );
+}
+
+export async function getStaticProps() {
+  // faça a requisição dos dados necessários para a página
+  const played = 0;
+
+  return {
+    props: {
+      played
+    },
+    
+    revalidate: 60 * 60 * 2
+  };
 }
