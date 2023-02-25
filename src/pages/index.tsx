@@ -42,7 +42,7 @@ export default function Home() {
       <MotionBox w={['100%', '70%']} h={['50vh', '70vh']}>
         {isClient && (
           <ReactPlayer
-            url="https://www.youtube.com/watch?v=pGsVhBUWgYs"
+            url="teste"
             width="100%"
             height="100%"
             controls
