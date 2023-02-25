@@ -13,21 +13,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              if (typeof window !== 'undefined') {
-                const preferDark = window.localStorage.getItem('theme') === 'dark';
-
-                if (preferDark) {
-                  document.documentElement.classList.add('dark')
-                } else {
-                  document.documentElement.classList.remove('dark')
-                }
-              }
-            `
-          }}
-        />
+  
       </body>
     </Html>
   )

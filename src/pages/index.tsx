@@ -7,8 +7,6 @@ import Head from 'next/head';
 import { Root } from '@/components/Root';
 import { MotionBox, animationContainer } from '@/styles/animation';
 
-
-
 export default function Home() {
   const [showContent, setShowContent] = useState(false);
   const playerRef = useRef<ReactPlayer>(null);
@@ -38,13 +36,13 @@ export default function Home() {
         initial="hidden"
         animate="visible"
       >
-        <Heading>Headline aqui!</Heading>
+        <Heading>Headline aqui</Heading>
       </MotionBox>
 
       <MotionBox w={['100%', '70%']} h={['50vh', '70vh']}>
         {isClient && (
           <ReactPlayer
-            url="test"
+            url="https://www.youtube.com/watch?v=pGsVhBUWgYs"
             width="100%"
             height="100%"
             controls
