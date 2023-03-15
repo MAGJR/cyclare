@@ -1,8 +1,8 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import { Header } from '@/components/Header'
 
-export default class MyDocument extends Document {
-  render() {
+export default function Document() {
+  
     return (
       <Html>
         <Head>
@@ -27,4 +27,4 @@ export default class MyDocument extends Document {
       </Html>
     )
   }
-}
+
