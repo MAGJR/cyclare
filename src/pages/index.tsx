@@ -56,6 +56,13 @@ export default function Home() {
     setContentVisible(true);
   }
 
+  function handleVideoClick () {
+    if (isPlaying) {
+      setIsPlaying(false);
+      setIsButtonVisible(true)
+    }
+  }
+
   return (
     <Flex direction="column" align="center" justify="center">
       <Head>
@@ -80,7 +87,7 @@ export default function Home() {
             playing={isPlaying}
             ref={playerRef}
             onProgress={handleVideoProgress}
-            
+            onClick={handleVideoClick}
           />
         )}
         {isButtonVisible && (
