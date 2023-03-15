@@ -41,7 +41,7 @@ export default function Home() {
     }
   }
 
-  function handleVideoProgress({ playedSeconds, played }: ReactPlayerProps) {
+  function handleVideoProgress({ playedSeconds}: ReactPlayerProps) {
     const threshold = 10;
     if (playedSeconds > threshold) {
       setContentVisible(true);
