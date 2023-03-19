@@ -45,6 +45,7 @@ export default function Home() {
     const threshold = 10;
     if (playedSeconds > threshold) {
       setContentVisible(true);
+      setShowContent(true);
     }
   }
 
