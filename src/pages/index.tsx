@@ -68,8 +68,14 @@ export default function Home() {
       <Head>
         <title>Cyclare | Início</title>
       </Head>
-      <MotionBox maxW={'70%'} mb="10" textAlign="center">
-        <Heading>Headline aqui</Heading>
+      <MotionBox 
+      maxW={["100%",'70%']} 
+      mt={["2","5"]} 
+      mb={["2","5"]}
+      textAlign="center"
+      
+      >
+        <Heading>Aprenda como se livrar da constipação de uma vez</Heading>
       </MotionBox>
       <MotionBox
         w={['100%', '70%']}

@@ -1,17 +1,20 @@
-import { theme } from '../styles/theme'
-import { ChakraProvider } from '@chakra-ui/react'
-import type { AppProps } from 'next/app'
+import { theme } from '../styles/theme';
+import { ChakraProvider } from '@chakra-ui/react';
+import type { AppProps } from 'next/app';
 
+function MyApp({ Component, pageProps }: AppProps) {
 
-export default function App({ Component, pageProps }: AppProps) {
-  return(
+  if (typeof window !== 'undefined') {
+    window.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+    });
+  }
+
+  return (
     <ChakraProvider theme={theme}>
-      
       <Component {...pageProps} />
-
     </ChakraProvider>
-
-  ) 
+  );
 }
 
-
+export default MyApp;
