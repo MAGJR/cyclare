@@ -27,9 +27,6 @@ export default function Home() {
   const [contentVisible, setContentVisible] = useState(false);
 
 
-  
-
-  
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -61,7 +58,7 @@ export default function Home() {
     }
 
     const playrate = (playedSeconds / (playerRef.current?.getDuration() ?? 0)) * 100;
-    
+    ReactGA.initialize("G-9MVHYB9S60");
     ReactGA.event({
       category: 'PLAY_RATE',
       action: 'video',
