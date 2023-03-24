@@ -1,25 +1,35 @@
-import { useState, useRef, useEffect } from 'react';
-import { Flex, Heading, IconButton, CircularProgress } from '@chakra-ui/react';
-import ReactPlayer, { ReactPlayerProps } from 'react-player';
 import Head from 'next/head';
-
+import { Lead } from '@/components/Lead';
 import { Root } from '@/components/Root';
 import { MotionBox } from '@/styles/animation';
-import { Lead } from '@/components/Lead';
+import { Flex, Heading, IconButton } from '@chakra-ui/react';
+import ReactGA from 'react-ga4';
+import { useState, useRef, useEffect } from 'react';
+
 import { MdPlayArrow, MdPause } from 'react-icons/md';
+import ReactPlayer, { ReactPlayerProps } from 'react-player';
+
+
 
 export default function Home() {
+  
   const playerRef = useRef<ReactPlayer>(null);
-  const [showContent, setShowContent] = useState(false);
-  const [isButtonVisible, setIsButtonVisible] = useState(true);
-
   const [videoStarted, setVideoStarted] = useState(false);
+  const URL_VIDEO = 'https://d2a7jgldn44rxi.cloudfront.net/VSL%20FINALIZADA.mp4'
+  
   
   const [isClient, setIsClient] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  
+  const [isButtonVisible, setIsButtonVisible] = useState(true);
+
+  const [showContent, setShowContent] = useState(false);
   const [contentVisible, setContentVisible] = useState(false);
+
+
   
 
+  
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -39,14 +49,26 @@ export default function Home() {
       setIsButtonVisible(false);
       setVideoStarted(true);
     }
+
+    
   }
 
-  function handleVideoProgress({ playedSeconds}: ReactPlayerProps) {
+  function handleVideoProgress({ playedSeconds,  }: ReactPlayerProps) {
     const threshold = 10;
     if (playedSeconds > threshold) {
       setContentVisible(true);
       setShowContent(true);
     }
+
+    const playrate = (playedSeconds / (playerRef.current?.getDuration() ?? 0)) * 100;
+    
+    ReactGA.event({
+      category: 'PLAY_RATE',
+      action: 'video',
+      label: 'video',
+      value: playrate
+  })
+  console.log(playrate);
   }
 
   function handleBoxClick() {
@@ -86,7 +108,7 @@ export default function Home() {
       >
         {isClient && (
           <ReactPlayer
-            url="https://d2a7jgldn44rxi.cloudfront.net/VSL%20FINALIZADA.mp4"
+            url= {URL_VIDEO}
             width="100%"
             height="100%"
             controls={false}
