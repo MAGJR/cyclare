@@ -66,6 +66,7 @@ export default function Home() {
       value: playrate
   })
   
+  console.log(playrate)
   }
 
   function handleBoxClick() {
