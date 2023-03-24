@@ -12,7 +12,7 @@ import ReactPlayer, { ReactPlayerProps } from 'react-player';
 
 
 export default function Home() {
-  
+  ReactGA.initialize("G-9MVHYB9S60");
   const playerRef = useRef<ReactPlayer>(null);
   const [videoStarted, setVideoStarted] = useState(false);
   const URL_VIDEO = 'https://d2a7jgldn44rxi.cloudfront.net/VSL%20FINALIZADA.mp4'
@@ -58,7 +58,7 @@ export default function Home() {
     }
 
     const playrate = (playedSeconds / (playerRef.current?.getDuration() ?? 0)) * 100;
-    ReactGA.initialize("G-9MVHYB9S60");
+   
     ReactGA.event({
       category: 'PLAY_RATE',
       action: 'video',
