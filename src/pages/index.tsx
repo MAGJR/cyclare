@@ -68,7 +68,7 @@ export default function Home() {
       label: 'video',
       value: playrate
   })
-  console.log(playrate);
+  
   }
 
   function handleBoxClick() {
