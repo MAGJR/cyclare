@@ -12,7 +12,8 @@ import ReactPlayer, { ReactPlayerProps } from 'react-player';
 
 
 export default function Home() {
-  ReactGA.initialize("G-9MVHYB9S60");
+  
+
   const playerRef = useRef<ReactPlayer>(null);
   const [videoStarted, setVideoStarted] = useState(false);
   const URL_VIDEO = 'https://d2a7jgldn44rxi.cloudfront.net/VSL%20FINALIZADA.mp4'
@@ -27,6 +28,7 @@ export default function Home() {
   const [contentVisible, setContentVisible] = useState(false);
 
 
+ 
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -55,19 +57,21 @@ export default function Home() {
     if (playedSeconds > threshold) {
       setContentVisible(true);
       setShowContent(true);
+      MetricsVideo(playedSeconds);
     }
-
     const playrate = (playedSeconds / (playerRef.current?.getDuration() ?? 0)) * 100;
-   
-    ReactGA.event({
-      category: 'PLAY_RATE',
-      action: 'video',
-      label: 'video',
-      value: playrate
-  })
-  
-  console.log(playrate)
+    console.log(playrate);
+    
   }
+
+function MetricsVideo(playrate: number) {
+  ReactGA.event({
+    category: 'play_rate_change',
+    action: 'video_category',
+    label: 'video_label',
+    value: playrate,
+  });
+}
 
   function handleBoxClick() {
     if (isPlaying) {
@@ -96,7 +100,7 @@ export default function Home() {
       textAlign="center"
       
       >
-        <Heading>Aprenda como se livrar da constipação de uma vez</Heading>
+      <Heading>Aprenda como se livrar da constipação de uma vez</Heading>
       </MotionBox>
       <MotionBox
         w={['100%', '70%']}
