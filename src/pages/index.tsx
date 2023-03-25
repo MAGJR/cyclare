@@ -5,7 +5,6 @@ import { MotionBox } from '@/styles/animation';
 import { Flex, Heading, IconButton } from '@chakra-ui/react';
 import ReactGA from 'react-ga4';
 import { useState, useRef, useEffect } from 'react';
-
 import { MdPlayArrow, MdPause } from 'react-icons/md';
 import ReactPlayer, { ReactPlayerProps } from 'react-player';
 
@@ -13,7 +12,6 @@ import ReactPlayer, { ReactPlayerProps } from 'react-player';
 
 export default function Home() {
   
-
   const playerRef = useRef<ReactPlayer>(null);
   const [videoStarted, setVideoStarted] = useState(false);
   const URL_VIDEO = 'https://d2a7jgldn44rxi.cloudfront.net/VSL%20FINALIZADA.mp4'
@@ -52,26 +50,30 @@ export default function Home() {
     
   }
 
-  function handleVideoProgress({ playedSeconds,  }: ReactPlayerProps) {
+  function handleVideoProgress({ playedSeconds, totalDuration }: ReactPlayerProps) {
     const threshold = 10;
+  
     if (playedSeconds > threshold) {
       setContentVisible(true);
       setShowContent(true);
-      MetricsVideo(playedSeconds);
+      const playRate = calculatePlayRate(playedSeconds, totalDuration);
+      MetricsVideo(playRate);
     }
-    const playrate = (playedSeconds / (playerRef.current?.getDuration() ?? 0)) * 100;
-    console.log(playrate);
-    
   }
-
-function MetricsVideo(playrate: number) {
-  ReactGA.event({
-    category: 'play_rate_change',
-    action: 'video_category',
-    label: 'video_label',
-    value: playrate,
-  });
-}
+  
+  function MetricsVideo(playRate: number) {
+    ReactGA.event({
+      category: 'video_metrics',
+      action: 'play_rate_change',
+      label: 'video_category',
+      value: playRate,
+    });
+  }
+  
+  function calculatePlayRate(playedSeconds: number, totalDuration: number): number {
+    const playRate = (playedSeconds / totalDuration) * 100;
+    return parseFloat(playRate.toFixed(2));
+  }
 
   function handleBoxClick() {
     if (isPlaying) {
