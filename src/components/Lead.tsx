@@ -6,9 +6,18 @@ import 'slick-carousel/slick/slick-theme.css';
 import { HTMLMotionProps,  motion, Variants } from 'framer-motion';
 import { MotionBox } from '@/styles/animation';
 
-interface DepoimentoProps extends HTMLMotionProps<'div'> {
-  isActive: boolean;
+
+interface Depoimento {
+  name: String;
+  description: String;
 }
+
+interface DepoimentoProps extends HTMLMotionProps<'div'> {
+  isActive: Boolean;
+  depoimento: Depoimento
+}
+
+
 
 const animationContainer: Variants = {
   hidden: {
@@ -24,7 +33,7 @@ const animationContainer: Variants = {
   }
 };
 
-function Depoimento({ isActive }: DepoimentoProps) {
+function Depoimento({ isActive, depoimento }: DepoimentoProps) {
   return (
     <MotionBox
       padding={["2","8"]}
@@ -35,7 +44,7 @@ function Depoimento({ isActive }: DepoimentoProps) {
       variants={animationContainer}
       initial="hidden"
       animate={isActive ? 'show' : 'show'}
-      whileHover={{ scale: 1.009 }}
+      whileHover={{ scale: 1.001 }}
       whileTap={{ scale: 0.9 }}
     >
       <Box display="flex" alignItems="center" justifyContent="center" mb={4}>
@@ -53,10 +62,10 @@ function Depoimento({ isActive }: DepoimentoProps) {
             <i className="fas fa-user"></i>
           </Box>
         </Box>
-        <Text fontWeight="bold">Nome do cliente</Text>
+        <Text fontWeight="bold">{depoimento.name}</Text>
       </Box>
       <Text fontSize="sm">
-        "Aqui vai o depoimento do cliente sobre como o produto foi útil para ele e como sua vida melhorou depois de usá-lo."
+        {depoimento.description}
       </Text>
     </MotionBox>
   );
@@ -64,7 +73,28 @@ function Depoimento({ isActive }: DepoimentoProps) {
 
 export function Lead() {
   const [slideIndex, setSlideIndex] = useState(0);
-
+  const depoimentos: Depoimento[] = [
+    {
+    name: 'Joseph',
+    description: `I suffered from constipation for years and had tried several treatments without success. My quality of life was greatly affected and I could no longer tolerate this situation. That's when I heard about Cyclare and decided to give it a try. Since then, everything has changed! In addition to gaining much more time without suffering from constipation, I was able to enjoy delicious foods that were previously forbidden to me.`,
+  },
+  {
+    name: 'Emma',
+    description: `During my pregnancy, I started suffering from constipation and it greatly affected my quality of life. I tried some solutions, but nothing seemed to work and I was getting more and more frustrated. That's when I heard about Cyclare and decided to give it a try. I was surprised by the incredible result!`
+  },
+  {
+    name: 'Daisy',
+    description: `I've always suffered from constipation and started using laxatives to help me evacuate. However, over time, I realized that I couldn't evacuate without them anymore and that began to worry me. That's when I came across Cyclare and decided to give it a try. To my surprise, I no longer needed the laxatives and started to evacuate naturally. I was very happy with the results and now feel much more comfortable and healthy.`
+  },
+  {
+    name: 'Norman',
+    description: `After I turned 30, I began to notice that I wasn't evacuating as frequently as before. I used to go 3 to 5 days without being able to evacuate, and it started to worry me. I tried some solutions, but nothing seemed to work until I heard about Cyclare and decided to give it a try. I was surprised by the immediate result! I started evacuating more daily and my quality of life improved a lot. I thank Cyclare for helping me recover my intestinal health.`
+  },
+  {
+    name: 'Phillip',
+    description: `I was born with constipation and throughout my entire life, I had difficulty evacuating. It was a constant struggle and I had lost hope of finding a solution. That's when I heard about Cyclare and decided to give it a try. I was surprised with the results! For the first time in my life, I began to evacuate more frequently and my life changed completely. I feel much healthier and happier now, all thanks to Cyclare.`
+  }
+]
   const settings = {
     dots: true,
     infinite: true,
@@ -91,18 +121,20 @@ export function Lead() {
         Compre agora
       </Button>
 
-      <Box mt={["6","8"]}>
+      <Box mt={["6","8"]} mb={["6", "8"]}>
         <Text fontSize="xl" fontWeight="bold" mb={4}>
           Depoimentos dos clientes
         </Text>
         <Slider {...settings} >
-          {[...Array(5)].map((_, i) => (
-            <Depoimento key={i} isActive={slideIndex === i} />
+          {depoimentos.map((depoimento, i) => (
+            <Depoimento 
+            key={i} 
+            isActive={slideIndex === i} 
+            depoimento={depoimento}
+            />
           ))}
         </Slider>
-        <Text fontSize="sm" mt={4}>
-          {slideIndex + 1} de 5
-        </Text>
+        
       </Box>
     </Box>
   );

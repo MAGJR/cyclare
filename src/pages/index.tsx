@@ -61,13 +61,17 @@ export default function Home() {
     }
   }
   
-  function MetricsVideo(playRate: number) {
-    ReactGA.event({
-      category: 'video_metrics',
-      action: 'play_rate_change',
-      label: 'video_category',
-      value: playRate,
-    });
+  async function MetricsVideo(playRate: number) {
+    try {
+      await ReactGA.event({
+        category: 'video_metrics',
+        action: 'play_rate_change',
+        label: 'video_category',
+        value: playRate,
+      });
+    } catch (error) {
+      console.error('Error sending GA event:', error);
+    }
   }
   
   function calculatePlayRate(playedSeconds: number, totalDuration: number): number {
@@ -91,7 +95,7 @@ export default function Home() {
   }
 
   return (
-    <Flex direction="column" align="center" justify="center">
+    <Flex direction="column" align="center" justify="center" mt={120}>
       <Head>
         <title>Cyclare | Início</title>
       </Head>
@@ -102,7 +106,7 @@ export default function Home() {
       textAlign="center"
       
       >
-      <Heading>Aprenda como se livrar da constipação de uma vez</Heading>
+      <Heading mt="3">Aprenda como se livrar da constipação de uma vez</Heading>
       </MotionBox>
       <MotionBox
         w={['100%', '70%']}
