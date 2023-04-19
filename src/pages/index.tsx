@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { Lead } from '@/components/Lead';
-import { Root } from '@/components/Root';
+import { Foot } from '@/components/Foot';
 import { MotionBox } from '@/styles/animation';
-import { Flex, Heading, IconButton } from '@chakra-ui/react';
+import { Flex, Heading, IconButton, Text } from '@chakra-ui/react';
 import ReactGA from 'react-ga4';
 import { useState, useRef, useEffect } from 'react';
 import { MdPlayArrow, MdPause } from 'react-icons/md';
@@ -10,7 +10,7 @@ import ReactPlayer, { ReactPlayerProps } from 'react-player';
 
 
 
-export default function Home() {
+export default function Home() {  
   
   const playerRef = useRef<ReactPlayer>(null);
   const [videoStarted, setVideoStarted] = useState(false);
@@ -51,7 +51,7 @@ export default function Home() {
   }
 
   function handleVideoProgress({ playedSeconds, totalDuration }: ReactPlayerProps) {
-    const threshold = 10;
+    const threshold = 1545.45;
   
     if (playedSeconds > threshold) {
       setContentVisible(true);
@@ -83,6 +83,7 @@ export default function Home() {
     if (isPlaying) {
       setIsPlaying(false);
       setIsButtonVisible(true);
+      
     }
     setContentVisible(true);
   }
@@ -97,7 +98,7 @@ export default function Home() {
   return (
     <Flex direction="column" align="center" justify="center" mt={120}>
       <Head>
-        <title>Cyclare | Início</title>
+        <title>Cyclare | Home</title>
       </Head>
       <MotionBox 
       maxW={["100%",'70%']} 
@@ -106,7 +107,7 @@ export default function Home() {
       textAlign="center"
       
       >
-      <Heading mt="3">Aprenda como se livrar da constipação de uma vez</Heading>
+      <Heading mt="3"><Text as="span"  color="orange.400" >This molecule</Text> discovered by scientists is capable of cleaning the intestine</Heading>
       </MotionBox>
       <MotionBox
         w={['100%', '70%']}
@@ -129,9 +130,9 @@ export default function Home() {
         )}
         {isButtonVisible && (
           <IconButton
-            bgColor="blue.400"
+            bgColor="orange.400"
             _hover={{
-              bgColor: 'blue.500',
+              bgColor: 'orange.500',
             }}
             aria-label="play/pause"
             size="lg"
@@ -148,14 +149,14 @@ export default function Home() {
         
       </MotionBox>
       {isClient && showContent && <Lead />}
-
-  <Root />
+   <h1><Text color="gray.900">This website is not part of the Facebook website or Facebook Inc. Additionally, this site is not endorsed by Facebook in any way. Facebook is a trademark of Facebook, Inc.</Text></h1>   
+  <Foot />
 </Flex>
   );
 }
 
 export async function getStaticProps() {
-  // faça a requisição dos dados necessários para a página
+  
   const played = 0;
 
   return {

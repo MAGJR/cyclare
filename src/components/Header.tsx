@@ -2,6 +2,7 @@ import { MotionBox,  } from "@/styles/animation";
 import { Box } from "@chakra-ui/react";
 import Image from "next/image";
 import LogoHome from "../../public/logo.webp"
+import Link from "next/link";
 
 export function Header() {
   return (
@@ -18,12 +19,11 @@ export function Header() {
       borderRadius="6px"
       zIndex="1"
       >
-        <Image src={LogoHome} alt="logo" width={40} height={20} />
-       <Box ml="auto" mr="auto" display="flex" justifyContent="space-between" maxW={500} >
-        <h1>Inicio</h1>
-        <h1>Sobre</h1>
-        <h1>Depoimentos</h1>
-
+       
+       <Box mt="20" maxW="100" >
+        <Link href="/">
+       <Image src={LogoHome} alt="logo" width={40} height={20} />
+       </Link>
       </Box> 
      
     </Box>
