@@ -5,6 +5,9 @@ import LogoHome from "../../public/logo.webp"
 import Link from "next/link";
 
 export function Header() {
+ /* const today = moment().format('MM/DD/YYYY');
+  const message = `Today ${today} is the last day to watch this video` */
+
   return (
     <MotionBox>
     <Box position="fixed"
@@ -20,7 +23,7 @@ export function Header() {
       zIndex="1"
       >
        
-       <Box mt="20" maxW="100" >
+       <Box mt="20" >
         <Link href="/">
        <Image src={LogoHome} alt="logo" width={40} height={20} />
        </Link>

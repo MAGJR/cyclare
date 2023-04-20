@@ -5,7 +5,8 @@ import Link from 'next/link'
 export function Foot() {
   return (
     <Box as ="footer" 
-    mt={["4", "6"]} 
+    mt={["4", "6"]}
+    h={["120","100%"]}
     p="2" 
     w={["100%", "100%"]} 
     bg="gray.800" 

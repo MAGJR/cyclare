@@ -102,12 +102,12 @@ export default function Home() {
       </Head>
       <MotionBox 
       maxW={["100%",'70%']} 
-      mt={["2","5"]} 
+      mt={["0","0"]} 
       mb={["2","5"]}
       textAlign="center"
       
       >
-      <Heading mt="3"><Text as="span"  color="orange.400" >This molecule</Text> discovered by scientists is capable of cleaning the intestine</Heading>
+      <Heading mt={["0", "3"]}><Text as="span"  color="orange.400" >This molecule</Text> discovered by scientists is capable of cleaning the intestine</Heading>
       </MotionBox>
       <MotionBox
         w={['100%', '70%']}
