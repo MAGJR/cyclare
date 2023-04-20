@@ -20,6 +20,7 @@
     "@types/react-dom": "18.0.11",
     "framer-motion": "^9.0.4",
     "md": "^0.6.0",
+    "moment": "^2.29.4",
     "next": "13.1.6",
     "nookies": "^2.5.2",
     "phosphor-react": "^1.4.1",

@@ -51,8 +51,9 @@ export default function Home() {
   }
 
   function handleVideoProgress({ playedSeconds, totalDuration }: ReactPlayerProps) {
-    const threshold = 1545.45;
-  
+    /*const threshold = 1545.45; */
+    const threshold = 10;
+
     if (playedSeconds > threshold) {
       setContentVisible(true);
       setShowContent(true);
@@ -96,7 +97,7 @@ export default function Home() {
   }
 
   return (
-    <Flex direction="column" align="center" justify="center" mt={120}>
+    <Flex direction="column" align="center" justify="center" mt={25}>
       <Head>
         <title>Cyclare | Home</title>
       </Head>
