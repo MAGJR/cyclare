@@ -12,18 +12,8 @@ export function Header() {
   return (
     <MotionBox>
     <Box
-      display="flex"
-      justifyContent="center" 
-      alignItems="center"
-      height="60px"
-      width="100%"
-      bgColor="orange"
-      backdropFilter="blur(5px)" 
-      borderBottom="1px solid orange"
-      borderRadius="6px"
-      zIndex="1"
+      
       >
-       <Heading fontSize="3xl" fontWeight="bold">{message}</Heading>
        
      
     </Box>
