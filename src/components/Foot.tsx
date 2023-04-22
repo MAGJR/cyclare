@@ -14,9 +14,9 @@ export function Foot() {
     >
     
       <Box as="div" ml="auto" mr="auto" maxW={100} gap={1}  display="flex" >
-      <Link href="/Terms">Terms </Link>
+      <Link href="/Terms" target="_blank">Terms </Link>
       |
-      <Link href="/Terms">Privacy</Link>
+      <Link  href="/Terms" target="_blank">Privacy</Link>
       </Box>
       Copyright © 2023 - All Rights Reserved
     </Box>
