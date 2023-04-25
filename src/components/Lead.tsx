@@ -120,8 +120,8 @@ export function Lead() {
         as={motion.button}
         mt={['4','10']}
         colorScheme="green"
-        w={["70%","70%"]}
-        maxW={['70%', '100%']}
+        w={["100%","70%"]}
+        maxW={['100%', '100%']}
         p={['4', '6']}
         fontSize={['sm', 'md']}
         px={['4', '6']}
