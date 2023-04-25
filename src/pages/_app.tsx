@@ -1,7 +1,7 @@
 import { theme } from '../styles/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 import type { AppProps } from 'next/app';
-import ReactGA from "react-ga4";
+
 
 /*if (typeof window !== 'undefined') {
   window.addEventListener('contextmenu', (e) => {
@@ -9,11 +9,8 @@ import ReactGA from "react-ga4";
   })
 } */
 
-async function initializeGA() {
-  await ReactGA.initialize("your GA measurement id");
-}
 
-initializeGA();
+
 
 function MyApp({ Component, pageProps }: AppProps) { 
   return (
