@@ -26,7 +26,7 @@ class Vturb extends React.Component {
 
   static videoDelay = (onShow) => {
     /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
-    var SECONDS_TO_DISPLAY = 10;
+    var SECONDS_TO_DISPLAY = 1545;
 
     /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
     var attempts = 0;
@@ -84,7 +84,3 @@ class Vturb extends React.Component {
 }
 
 export default Vturb;
-
-
-
-
