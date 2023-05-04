@@ -39,11 +39,11 @@ export default function HomePage() {
       textAlign="center">
    <Heading mb={["20", "3"]}><Text as="span"  color="orange.400" >This molecule</Text> discovered by scientists is capable of cleaning the intestine</Heading>
   <Box 
-  id="vid_6443c396829ae2000a291b4e" w={["100%","70%"]} h={["50vh", "70vh"]}
+  id="vid_6453f344b0ab0b000926401f" w={["100%","70%"]} h={["50vh", "70vh"]}
   >
-  <img alt="thumbnail" id="thumb_6443c396829ae2000a291b4e" src="https://images.converteai.net/9c1356bc-b9b5-40dd-8e6e-e356cb7978c3/players/6443c396829ae2000a291b4e/thumbnail.jpg" 
+  <img alt="thumbnail" id="thumb_6453f344b0ab0b000926401f" src="https://images.converteai.net/9c1356bc-b9b5-40dd-8e6e-e356cb7978c3/players/6453f344b0ab0b000926401f/thumbnail.jpg" 
  />
-  <Box id="backdrop_643860100718a40009eca510" style={{position:"absolute",top:"0",width:"100%",height:"100%",backdropFilter:"blur(5px)"}}></Box>
+  <Box id="backdrop_6453f344b0ab0b000926401f" style={{position:"absolute",top:"0",width:"100%",height:"100%",backdropFilter:"blur(5px)"}}></Box>
   </Box>
   </MotionBox>
   

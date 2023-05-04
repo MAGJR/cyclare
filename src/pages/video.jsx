@@ -5,7 +5,7 @@ class Vturb extends React.Component {
   static mount = () => {
     this.script = document.createElement("script");
     this.script.src = `
-    https://scripts.converteai.net/9c1356bc-b9b5-40dd-8e6e-e356cb7978c3/players/6443c396829ae2000a291b4e/player.js
+    https://scripts.converteai.net/9c1356bc-b9b5-40dd-8e6e-e356cb7978c3/players/6453f344b0ab0b000926401f/player.js
     `;
     this.script.async = true;
     this.script.type = "text/javascript";
@@ -26,7 +26,7 @@ class Vturb extends React.Component {
 
   static videoDelay = (onShow) => {
     /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
-    var SECONDS_TO_DISPLAY = 1545;
+    var SECONDS_TO_DISPLAY = 1480;
 
     /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
     var attempts = 0;
