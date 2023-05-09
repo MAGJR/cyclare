@@ -1,14 +1,10 @@
 import Head from 'next/head';
+import Vturb from './video.jsx'
 import { Lead } from '@/components/Lead';
 import { Foot } from '@/components/Foot';
 import { MotionBox } from '@/styles/animation';
-import { Box, Flex, Heading, Text, useCallbackRef } from '@chakra-ui/react';
-
 import { useState, useEffect } from 'react';
-
-
-
-import Vturb from './video.jsx'
+import { Box, Flex, Heading, Text, useCallbackRef } from '@chakra-ui/react';
 
 
 export default function HomePage() {
@@ -37,7 +33,7 @@ export default function HomePage() {
       mt={["0","0"]} 
       mb={["2","5"]}
       textAlign="center">
-   <Heading mb={["20", "3"]}><Text as="span"  color="orange.400" >This molecule</Text> discovered by scientists is capable of cleaning the intestine</Heading>
+   <Heading  mb={["20", "3"]}><Text as="span"  color="orange.400" >This molecule</Text> discovered by scientists is capable of cleaning the intestine</Heading>
   <Box 
   id="vid_6453f344b0ab0b000926401f" w={["100%","70%"]} h={["50vh", "70vh"]}
   >
@@ -45,6 +41,7 @@ export default function HomePage() {
  />
   <Box id="backdrop_6453f344b0ab0b000926401f" style={{position:"absolute",top:"0",width:"100%",height:"100%",backdropFilter:"blur(5px)"}}></Box>
   </Box>
+  <Text fontSize={["1", "9"]} color="gray.900">This website is not affiliated with Facebook or any Facebook entity. Once you leave Facebook, it's not their responsibility, it's our website's. make every effort to clearly state and show all product evidence and actual used results. We do not sell your email address or any information to third parties. We never do any kind of spam. If you have any questions, please feel free to use the contact link and contact us during business hours Monday through Friday from 9:00 am to 6:00 pm. We read and respond to all messages on a first-come, first-served basis.</Text>
   </MotionBox>
   
   
