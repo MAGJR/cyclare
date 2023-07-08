@@ -5,7 +5,7 @@ import Link from 'next/link'
 export function Foot() {
   return (
     <Box as ="footer" 
-    mt={["100", "10"]}
+    mt={["140", "10"]}
     h={["120","100%"]}
     p="2" 
     w={["100%", "100%"]} 
@@ -14,11 +14,11 @@ export function Foot() {
     >
     
       <Box as="div" ml="auto" mr="auto" maxW={100} gap={1}  display="flex" >
-      <Link href="/Terms" target="_blank">Terms </Link>
+      <Link href="/Terms" target="_blank">Términos </Link>
       |
-      <Link  href="/Terms" target="_blank">Privacy</Link>
+      <Link  href="/privacy" target="_blank">privacidad</Link>
       </Box>
-      Copyright © 2023 - All Rights Reserved
+      Copyright © 2023 - Reservados todos los derechos
     </Box>
   );
 }

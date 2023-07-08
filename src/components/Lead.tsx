@@ -79,28 +79,28 @@ export function Lead() {
   const [slideIndex, setSlideIndex] = useState(0);
   const depoimentos: Depoimento[] = [
     {
-    name: 'Joseph',
-    description: `I suffered from constipation for years and had tried several treatments without success. My quality of life was greatly affected and I could no longer tolerate this situation. That's when I heard about Cyclare and decided to give it a try. Since then, everything has changed! In addition to gaining much more time without suffering from constipation, I was able to enjoy delicious foods that were previously forbidden to me.`,
+    name: 'Javier',
+    description: `Padecí de estreñimiento durante años y probé varios tratamientos sin éxito. Mi calidad de vida se vio gravemente afectada y ya no podía tolerar esta situación. Fue entonces cuando escuché acerca de Cyclare y decidí probarlo. ¡Desde entonces, todo ha cambiado! Además de ganar mucho más tiempo sin sufrir de estreñimiento, pude disfrutar de deliciosos alimentos que antes me estaban prohibidos.`,
     image: '/testimonials.webp'
   },
   {
-    name: 'Emma',
-    description: `During my pregnancy, I started suffering from constipation and it greatly affected my quality of life. I tried some solutions, but nothing seemed to work and I was getting more and more frustrated. That's when I heard about Cyclare and decided to give it a try. I was surprised by the incredible result!`,
+    name: 'Maria Dolores',
+    description: `Durante mi embarazo, empecé a padecer de estreñimiento y esto afectó considerablemente mi calidad de vida. Probé algunas soluciones, pero nada parecía funcionar y cada vez me sentía más frustrada. Fue entonces cuando escuché sobre Cyclare y decidí probarlo. ¡Me sorprendí con el resultado increíble!`,
     image: '/testimonials2.webp'
   },
   {
-    name: 'Daisy',
-    description: `I've always suffered from constipation and started using laxatives to help me evacuate. However, over time, I realized that I couldn't evacuate without them anymore and that began to worry me. That's when I came across Cyclare and decided to give it a try. To my surprise, I no longer needed the laxatives and started to evacuate naturally. I was very happy with the results and now feel much more comfortable and healthy.`,
+    name: 'Antónia',
+    description: `Siempre he padecido de estreñimiento y comencé a usar laxantes para ayudarme a evacuar. Sin embargo, con el tiempo, me di cuenta de que ya no podía evacuar sin ellos y eso comenzó a preocuparme. Fue entonces cuando descubrí Cyclare y decidí probarlo. Para mi sorpresa, ya no necesitaba los laxantes y empecé a evacuar de forma natural. Estaba muy feliz con los resultados y ahora me siento mucho más cómodo y saludable.`,
     image: '/testimonials3.webp'
   },
   {
-    name: 'Norman',
-    description: `After I turned 30, I began to notice that I wasn't evacuating as frequently as before. I used to go 3 to 5 days without being able to evacuate, and it started to worry me. I tried some solutions, but nothing seemed to work until I heard about Cyclare and decided to give it a try. I was surprised by the immediate result! I started evacuating more daily and my quality of life improved a lot. I thank Cyclare for helping me recover my intestinal health.`,
+    name: 'Manuel',
+    description: `Después de cumplir los 30 años, empecé a notar que no evacuaba con la misma frecuencia que antes. Solía pasar de 3 a 5 días sin poder evacuar y eso empezó a preocuparme. Probé algunas soluciones, pero nada parecía funcionar hasta que escuché sobre Cyclare y decidí probarlo. ¡Me sorprendí con el resultado inmediato! Empecé a evacuar más a diario y mi calidad de vida mejoró muchísimo. Agradezco a Cyclare por ayudarme a recuperar mi salud intestinal.`,
     image: '/testimonials4.webp'
   },
   {
-    name: 'Phillip',
-    description: `I was born with constipation and throughout my entire life, I had difficulty evacuating. It was a constant struggle and I had lost hope of finding a solution. That's when I heard about Cyclare and decided to give it a try. I was surprised with the results! For the first time in my life, I began to evacuate more frequently and my life changed completely. I feel much healthier and happier now, all thanks to Cyclare.`,
+    name: 'José Luís',
+    description: `Nací con estreñimiento y a lo largo de toda mi vida tuve dificultades para evacuar. Era una lucha constante y había perdido la esperanza de encontrar una solución. Fue entonces cuando escuché sobre Cyclare y decidí probarlo. ¡Me sorprendieron los resultados! Por primera vez en mi vida, empecé a evacuar con mayor frecuencia y mi vida cambió por completo. Ahora me siento mucho más saludable y feliz, todo gracias a Cyclare.`,
     image: '/testimonials5.webp'
   }
 ]
@@ -115,7 +115,7 @@ export function Lead() {
 
   return (
     <Box textAlign="center" maxW={"80%"} m="0 auto" >
-      <Link href="https://pay.hotmart.com/E80970971T?checkoutMode=10">
+      <Link href="https://pay.hotmart.com/J84333709U?checkoutMode=10">
       <Button
         as={motion.button}
         mt={['4','10']}
@@ -128,13 +128,13 @@ export function Lead() {
         py={['2', '4']}
         
       >
-        I want to get rid of constipation now!
+        adquirir ahora!
         
       </Button>
       </Link>
       <Box mt={["6","8"]} mb={["6", "8"]}>
         <Text fontSize="xl" fontWeight="bold" mb={4}>
-        Testimonials from customers
+        Testimonios de clientes.
         </Text>
         
           {depoimentos.map((depoimento, i) => (
@@ -147,7 +147,7 @@ export function Lead() {
         
         
       </Box>
-      <Link href="https://pay.hotmart.com/E80970971T?checkoutMode=10">
+      <Link href="https://pay.hotmart.com/J84333709U?checkoutMode=10">
       <Button
         as={motion.button}
         mt={['2','2']}
@@ -160,7 +160,7 @@ export function Lead() {
         py={['2', '4']}
         
       >
-        I want to get it now!
+        Adquirir ahora!
       </Button>
       </Link>
     </Box>
