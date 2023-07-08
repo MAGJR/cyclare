@@ -25,8 +25,8 @@ class Vturb extends React.Component {
   };
 
   static videoDelay = (onShow) => {
-    /* 1620 */
-    var SECONDS_TO_DISPLAY = 1080;
+    /*  */
+    var SECONDS_TO_DISPLAY = 1620;
 
     /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
     var attempts = 0;
