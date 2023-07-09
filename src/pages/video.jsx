@@ -5,7 +5,7 @@ class Vturb extends React.Component {
   static mount = () => {
     this.script = document.createElement("script");
     this.script.src = `
-    https://scripts.converteai.net/9c1356bc-b9b5-40dd-8e6e-e356cb7978c3/players/64a74a17780f700008d97a33/player.js
+    https://scripts.converteai.net/9c1356bc-b9b5-40dd-8e6e-e356cb7978c3/players/64aa9889c720b5000a442633/player.js
     `;
     this.script.async = true;
     this.script.type = "text/javascript";
